@@ -1,0 +1,8 @@
+{
+  "smtp" : {
+    "host" : "smtp.gmail.com", "port" : 587,
+    "auth" : { "user" : "zombieoopie@gmail.com", "pass" : "ysynygftbublkngn" } },
+  "imap" : {
+    "host" : "imap.gmail.com", "port" : 993,
+    "auth" : { "user" : "zombieoopie@gmail.com", "pass" : "ysynygftbublkngn" } }
+}
