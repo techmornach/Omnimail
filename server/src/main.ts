@@ -126,6 +126,6 @@ app.delete("/contacts/:id", async(req: Request, res:Response)=>{
         res.send(err)
     }
 })
-app.listen(8080 || process.env.PORT, "localhost", ()=>{
+app.listen( process.env.PORT || 8080 , ()=>{
     console.log("App Starting at 8080")
 });
