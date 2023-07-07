@@ -5,13 +5,13 @@ import  * as IMAP from "./IMAP";
 import  * as SMTP from "./SMTP";
 import * as Contacts from "./Contacts";
 import {IContact} from "./Contacts"
-const cors = require("cors")
+import cors from "cors";
 
 const app = express();
 //Handles incoming bodies containing json
 app.use(express.json());
 //Handle CORS
-app.use(cors)
+app.use(cors())
 //app.use((req:Request, res: Response, next:NextFunction)=>{
   //  res.header("Access-Control-Allow-Origin", "*");
   //  res.header("Access-Control-Allow-Methods", "GET, POST, DELETE, OPTIONS");

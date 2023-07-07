@@ -41,17 +41,19 @@ const ServerInfo_1 = require("./ServerInfo");
 const IMAP = __importStar(require("./IMAP"));
 const SMTP = __importStar(require("./SMTP"));
 const Contacts = __importStar(require("./Contacts"));
+const cors_1 = __importDefault(require("cors"));
 const app = (0, express_1.default)();
 //Handles incoming bodies containing json
 app.use(express_1.default.json());
 //Handle CORS
-app.use((req, res, next) => {
-    res.header("Access-Control-Allow-Origin", "*");
-    res.header("Access-Control-Allow-Methods", "GET, POST, DELETE, OPTIONS");
-    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-    next();
-    //Why didn't I simply use the cors module😂😂
-});
+app.use((0, cors_1.default)());
+//app.use((req:Request, res: Response, next:NextFunction)=>{
+//  res.header("Access-Control-Allow-Origin", "*");
+//  res.header("Access-Control-Allow-Methods", "GET, POST, DELETE, OPTIONS");
+//  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept")
+//   next();
+//Why didn't I simply use the cors module😂😂
+//})
 //Client directory
 app.use(express_1.default.static(path_1.default.join(__dirname, '../client/build')));
 app.get('/', (req, res) => {
@@ -164,6 +166,6 @@ app.delete("/contacts/:id", (req, res) => __awaiter(void 0, void 0, void 0, func
         res.send(err);
     }
 }));
-app.listen(8080 || process.env.PORT, "localhost", () => {
+app.listen(process.env.PORT || 8080, () => {
     console.log("App Starting at 8080");
 });
