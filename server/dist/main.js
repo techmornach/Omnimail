@@ -55,7 +55,7 @@ app.use((req, res, next) => {
 //Client directory
 app.use(express_1.default.static(path_1.default.join(__dirname, '../client/build')));
 app.get('/', (req, res) => {
-    res.sendFile(path_1.default.join(__dirname, '../client/build/index.html'));
+    res.sendFile(path_1.default.join(__dirname, '../../client/build/index.html'));
 });
 //List Mailboxes
 app.get("/mailboxes", (req, res) => __awaiter(void 0, void 0, void 0, function* () {

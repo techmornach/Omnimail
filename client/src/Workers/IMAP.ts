@@ -31,6 +31,7 @@ export class Worker{
         const response: AxiosResponse = await axios.get(
             `${config.serverAddress}/messages/${inMailbox}/${inID}`
         )
+        console.log(inID, inMailbox)
         return response.data
     }
 
