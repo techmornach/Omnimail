@@ -216,7 +216,7 @@ const BaseLayout: React.FC = () => {
                 <div className={"centerView"}>
                     <MessageList messages={messages} showMessage={showMessage}/>
                     {currentView === "welcome" && <WelcomeView/>}
-                    {(currentView ==="message" || currentView === "compose")&&<MessageView currentView={currentView} messageID={messageID} messageDate={messageDate} messageFrom={messageFrom} messageBody={messageBody} messageSubject={messageSubject} sendMessage={sendMessage} deleteMessage={deleteMessage}/>}
+                    {(currentView ==="message" || currentView === "compose")&&<MessageView currentView={currentView} messageID={messageID} messageDate={messageDate} messageFrom={messageFrom} messageBody={messageBody} messageSubject={messageSubject} sendMessage={sendMessage} deleteMessage={deleteMessage} showComposeMessage={showComposeMessage}/>}
                     {(currentView === "contact" || currentView === "contactAdd") && <ContactView currentView={currentView} contactName={contactName} fieldChangeHandler={fieldChangeHandler} contactEmail={contactEmail} showComposeMessage={showComposeMessage} saveContact={saveContact} deleteContact={deleteContact}/>}
                 </div>
                 <ContactList contacts={contacts} showContact={showContact} />
