@@ -2,6 +2,6 @@ export const config: {
     serverAddress: string,
     userEmail: string
 } = {
-    serverAddress: "http://localhost:8080",
+    serverAddress: "https://omnimail-server.onrender.com",
     userEmail: "user@gmail.com"
 }
