@@ -29,7 +29,7 @@ const Datastore = require("nedb");
 class Worker {
     constructor() {
         this.db = new Datastore({
-            filename: path.join(__dirname, "/contacts.db"),
+            filename: path.join(__dirname, "/contact.db"),
             autoload: true
         });
     }

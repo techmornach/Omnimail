@@ -42,11 +42,11 @@ const BaseLayout: React.FC = () => {
         setMailboxes(mailboxes);
     }
 
-    function  addMailbox(inMailbox: IMAP.IMailbox): void{
-        const client: IMAP.IMailbox[] = mailboxes.slice(0);
-        client.push(inMailbox);
-        setMailboxes(client);
-    }
+  //  function  addMailbox(inMailbox: IMAP.IMailbox): void{
+    //    const client: IMAP.IMailbox[] = mailboxes.slice(0);
+ //       client.push(inMailbox);
+ //       setMailboxes(client);
+   // }
 
     getMailBoxes().then(()=>{
         async function getContacts(){
@@ -59,17 +59,17 @@ const BaseLayout: React.FC = () => {
         })
     })
 
-    function addContactToList(inContact: Contacts.IContact):void{
-        const client = contacts.slice(0);
-        client.push(
-            {
-                _id:inContact._id,
-                name: inContact.name,
-                email: inContact.email
-            }
-        )
-        setContacts(client);
-    }
+//    function addContactToList(inContact: Contacts.IContact):void{
+  //      const client = contacts.slice(0);
+    //    client.push(
+      //      {
+        //        _id:inContact._id,
+          //      name: inContact.name,
+            //    email: inContact.email
+       //     }
+       // )
+      //  setContacts(client);
+//}
 
     function showComposeMessage(inType: string):void{
         const NewMessageBody = `${config.userEmail}
