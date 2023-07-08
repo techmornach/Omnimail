@@ -23,13 +23,13 @@ export class Worker{
 
     public async listMessages(inMailbox: string): Promise<IMessage[]>{
         const response: AxiosResponse = await axios.get(
-            `${config.serverAddress}/mailboxes/${inMailbox}`
+            `${config.serverAddress}/mailboxes/${encodeURIComponent(inMailbox)}`
         )
         return response.data
     }
-    public async getMessageBody(inID: string, inMailbox: String):Promise<string>{
+    public async getMessageBody(inID: string, inMailbox: string):Promise<string>{
         const response: AxiosResponse = await axios.get(
-            `${config.serverAddress}/messages/${inMailbox}/${inID}`
+            `${config.serverAddress}/messages/${encodeURIComponent(inMailbox)}/${inID}`
         )
         console.log(inID, inMailbox)
         return response.data
@@ -37,7 +37,7 @@ export class Worker{
 
     public async deleteMessage(inID: string, inMailbox: string):Promise<void>{
         await axios.delete(
-            `${config.serverAddress}/messages/${inMailbox}/${inID}`
+            `${config.serverAddress}/messages/${encodeURIComponent(inMailbox)}/${inID}`
         )
     }
 }
