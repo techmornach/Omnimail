@@ -2,17 +2,17 @@ import React from "react";
 import { List, Chip } from "@mui/material";
 
 const MailboxList = (props: {
-    mailboxes: { name: any; path: any; }[];
+    mailboxes: { name: any; path: any }[];
     getCurrentMailbox: (arg0: any) => void;
     currentMailbox: any;
 }) => {
     return (
         <div className={"mailboxList"}>
             <List>
-                {props.mailboxes.map((value: { name: any; path: any; }, index: number) => {
-                    return (
+                {props.mailboxes.map((value: { name: any; path: any }, index: number) => (
+                    value.name !== "[Gmail]" && (
                         <Chip
-                            key={index} // Add the "key" prop here
+                            key={index}
                             label={`${value.name}`}
                             onClick={() => {
                                 props.getCurrentMailbox(value.path);
@@ -20,8 +20,8 @@ const MailboxList = (props: {
                             style={{ width: 128, marginBottom: 10 }}
                             color={props.currentMailbox === value.path ? "secondary" : "primary"}
                         />
-                    );
-                })}
+                    )
+                ))}
             </List>
         </div>
     );
