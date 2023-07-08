@@ -25,6 +25,7 @@ export class Worker{
         const response: AxiosResponse = await axios.get(
             `${config.serverAddress}/mailboxes/${encodeURIComponent(inMailbox)}`
         )
+        console.log(`${config.serverAddress}/mailboxes/${encodeURIComponent(inMailbox)}`)
         return response.data
     }
     public async getMessageBody(inID: string, inMailbox: string):Promise<string>{

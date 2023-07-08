@@ -43,10 +43,10 @@ const SMTP = __importStar(require("./SMTP"));
 const Contacts = __importStar(require("./Contacts"));
 const cors_1 = __importDefault(require("cors"));
 const app = (0, express_1.default)();
-//Handles incoming bodies containing json
-app.use(express_1.default.json());
 //Handle CORS
 app.use((0, cors_1.default)());
+//Handles incoming bodies containing json
+app.use(express_1.default.json());
 //app.use((req:Request, res: Response, next:NextFunction)=>{
 //  res.header("Access-Control-Allow-Origin", "*");
 //  res.header("Access-Control-Allow-Methods", "GET, POST, DELETE, OPTIONS");
