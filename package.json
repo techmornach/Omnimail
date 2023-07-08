@@ -1,0 +1,14 @@
+{
+  "name": "omnimail",
+  "version": "1.0.0",
+  "description": "Mail Client Application",
+  "main": "index.js",
+  "scripts": {
+    "install": "cd ./client && npm install && cd ../server && npm install",
+    "dev":"cd ./client && npm run build && cd ../server && node ./node_modules/nodemon/bin/nodemon.js -e ts --exec \"npm run compile\"",
+    "prod":"cd ./client && npm run build && cd ../server && npx tsc && node ./dist/main.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Taiwo Ifedayo",
+  "license": "ISC"
+}
