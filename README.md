@@ -120,7 +120,9 @@ The user interface allows you to perform various actions such as viewing emails,
 
 ## Demo <a name="demo"></a>
 
-![OmniMail Demo](https://ibb.co/CW7bcc6)
+<p align='center'>
+  <img src='https://ibb.co/CW7bcc6' alt='header'>
+</p>
 
 The above screenshot showcases the OmniMail application in action. It demonstrates the user interface and the features available to users.
 
